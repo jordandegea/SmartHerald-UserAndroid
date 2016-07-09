@@ -1,0 +1,22 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="0dip" android:layout_gravity="top"
+    >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:gravity="left"
+            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:maxLines="3"
+            android:lines="3"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            android:layout_column="0"
+            android:padding="10dp"/>
+    </TableRow>
+</TableLayout>

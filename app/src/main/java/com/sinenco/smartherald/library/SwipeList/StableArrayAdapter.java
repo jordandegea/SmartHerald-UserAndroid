@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.library.SwipeList;
+package com.sinenco.smartherald.library.SwipeList;
 
 import android.content.Context;
 import android.view.View;

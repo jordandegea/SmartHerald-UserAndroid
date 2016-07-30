@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.library.TouchListenerTool;
+package com.sinenco.smartherald.library.TouchListenerTool;
 
 import android.view.MotionEvent;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.ui.activity;
+package com.sinenco.smartherald.ui.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,8 +13,8 @@ import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.sinenco.sharednews.R;
-import com.sinenco.sharednews.ui.adapter.ServicesSearchListAdapter;
+import com.sinenco.smartherald.R;
+import com.sinenco.smartherald.ui.adapter.ServicesSearchListAdapter;
 
 import java.util.HashMap;
 import java.util.Map;

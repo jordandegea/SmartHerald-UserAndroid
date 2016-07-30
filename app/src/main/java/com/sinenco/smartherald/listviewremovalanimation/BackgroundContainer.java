@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sinenco.sharednews.listviewremovalanimation;
+package com.sinenco.smartherald.listviewremovalanimation;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -23,7 +23,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.sinenco.sharednews.R;
+import com.sinenco.smartherald.R;
 
 
 public class BackgroundContainer extends FrameLayout {

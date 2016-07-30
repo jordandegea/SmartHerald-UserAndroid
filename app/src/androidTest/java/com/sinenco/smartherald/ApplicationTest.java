@@ -1,4 +1,4 @@
-package com.sinenco.sharednews;
+package com.sinenco.smartherald;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

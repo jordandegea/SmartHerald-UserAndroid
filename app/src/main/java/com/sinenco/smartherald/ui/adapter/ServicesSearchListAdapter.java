@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.ui.adapter;
+package com.sinenco.smartherald.ui.adapter;
 
 import android.app.Activity;
 import android.view.View;
@@ -7,16 +7,17 @@ import android.widget.TextView;
 
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
-import com.sinenco.sharednews.R;
-import com.sinenco.sharednews.ui.activity.ServicesListActivity;
+import com.sinenco.smartherald.R;
+import com.sinenco.smartherald.ui.activity.ServiceSearchActivity;
 
 /**
  * Created by JordanLeMagnifique on 22/03/2016.
  */
-public class ServicesListAdapter<T extends ParseObject> extends ParseQueryAdapter<T> {
+public class ServicesSearchListAdapter<T extends ParseObject> extends ParseQueryAdapter<T> {
     private Activity activity;
 
-    public ServicesListAdapter(Activity mActivity, QueryFactory<T> queryFactory) {
+
+    public ServicesSearchListAdapter(Activity mActivity, QueryFactory<T> queryFactory) {
         super(mActivity, queryFactory);
         activity = mActivity;
     }
@@ -26,9 +27,8 @@ public class ServicesListAdapter<T extends ParseObject> extends ParseQueryAdapte
 
     @Override
     public View getItemView(T object, View v, ViewGroup parent) {
-
         if (v == null) {
-            v = View.inflate(getContext(), R.layout.services_list_item, null);
+            v = View.inflate(getContext(), R.layout.service_search_list_item, null);
         }
 
         // Take advantage of ParseQueryAdapter's getItemView logic for
@@ -39,17 +39,10 @@ public class ServicesListAdapter<T extends ParseObject> extends ParseQueryAdapte
 
         // Do additional configuration before returning the View.
         TextView nameView = (TextView) v.findViewById(R.id.name);
-        //System.out.println(object.toString());
-        //System.out.println(object.getParseObject("service").toString());
-        if ( object.getParseObject("service").has("name")) {
-            nameView.setText(object.getParseObject("service").getString("name"));
-        }else {
-            nameView.setText("coucou");
-        }
+        nameView.setText(object.getString("name"));
         v.setOnClickListener(new OnItemClickListener( object ));
         return v;
     }
-
 
     /********* Called when Item click in ListView ************/
     private class OnItemClickListener  implements View.OnClickListener{
@@ -61,7 +54,7 @@ public class ServicesListAdapter<T extends ParseObject> extends ParseQueryAdapte
 
         @Override
         public void onClick(View arg0) {
-            ServicesListActivity sct = (ServicesListActivity)activity;
+            ServiceSearchActivity sct = (ServiceSearchActivity)activity;
             sct.onItemClick(object);
         }
     }

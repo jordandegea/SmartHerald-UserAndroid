@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.push;
+package com.sinenco.smartherald.push;
 
 import com.parse.ParsePushBroadcastReceiver;
 

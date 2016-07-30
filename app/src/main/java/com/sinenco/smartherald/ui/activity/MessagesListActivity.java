@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.ui.activity;
+package com.sinenco.smartherald.ui.activity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -13,8 +13,8 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.sinenco.sharednews.R;
-import com.sinenco.sharednews.ui.adapter.MessagesListAdapter;
+import com.sinenco.smartherald.R;
+import com.sinenco.smartherald.ui.adapter.MessagesListAdapter;
 
 public class MessagesListActivity extends AppCompatActivity {
 

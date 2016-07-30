@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sinenco.sharednews.listviewremovalanimation;
+package com.sinenco.smartherald.listviewremovalanimation;
 
 import android.content.Context;
 import android.view.View;

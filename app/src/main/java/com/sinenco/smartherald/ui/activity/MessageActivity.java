@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.ui.activity;
+package com.sinenco.smartherald.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.sinenco.sharednews.R;
+import com.sinenco.smartherald.R;
 
 public class MessageActivity extends AppCompatActivity {
 

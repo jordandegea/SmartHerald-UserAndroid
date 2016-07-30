@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SharedNews</string>
+    <string name="app_name">Smart Herald</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_service_search">ServiceSearchActivity</string>

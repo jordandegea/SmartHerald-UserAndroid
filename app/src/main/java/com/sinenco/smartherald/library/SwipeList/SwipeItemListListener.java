@@ -1,4 +1,4 @@
-package com.sinenco.sharednews.library.SwipeList;
+package com.sinenco.smartherald.library.SwipeList;
 
 import android.content.Context;
 import android.view.MotionEvent;
@@ -7,8 +7,8 @@ import android.view.ViewConfiguration;
 import android.view.ViewTreeObserver;
 import android.widget.ListView;
 
-import com.sinenco.sharednews.library.TouchListenerTool.TouchListenerCallback;
-import com.sinenco.sharednews.listviewremovalanimation.BackgroundContainer;
+import com.sinenco.smartherald.library.TouchListenerTool.TouchListenerCallback;
+import com.sinenco.smartherald.listviewremovalanimation.BackgroundContainer;
 
 import java.util.HashMap;
 

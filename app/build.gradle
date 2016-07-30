@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.sinenco.sharednews"
+        applicationId "com.sinenco.smartherald"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 2

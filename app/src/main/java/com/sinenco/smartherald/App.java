@@ -1,4 +1,4 @@
-package com.sinenco.sharednews;
+package com.sinenco.smartherald;
 
 import android.app.Application;
 import android.content.res.Configuration;
@@ -17,7 +17,7 @@ import java.util.Date;
  */
 public class App extends Application {
 
-    private static final String PARSE_APPLICATION_ID = "com.sinenco.sharednews";
+    private static final String PARSE_APPLICATION_ID = "com.sinenco.smartherald";
     private static final String PARSE_SERVER_URL = "http://dev.shared-news.com/parse/";
 
     private static App singleton;

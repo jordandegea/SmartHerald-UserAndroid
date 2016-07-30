@@ -16,7 +16,7 @@
 tools:showIn="@layout/activity_main"-
     -->
     <view
-        class="com.sinenco.sharednews.listviewremovalanimation.BackgroundContainer"
+        class="com.sinenco.smartherald.listviewremovalanimation.BackgroundContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listViewBackground">

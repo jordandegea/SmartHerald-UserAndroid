@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Smart Herald</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_message">MessageActivity</string>
-    <string name="title_activity_service_search">ServiceSearchActivity</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title_activity_message">Messages</string>
+    <string name="title_activity_service_search">Entreprises</string>
+    <string name="logout">Deconnexion</string>
+    <string name="logIn">Se connecter</string>
+    <string name="createAnonymousAccount">Creer un compte Anonyme</string>
+    <string name="signUp">S\'inscrire</string>
+    <string name="username">Nom de compte</string>
+    <string name="email">Email</string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="close_tutorial">Fermer le tutorial</string>
+    <string name="tutorial_1_title">Introduction</string>
+    <string name="tutorial_1_content">Voici quelques explications sur le fonctionnement de cette application. \n\n\nSmart Herald est une application regroupant quelques entreprises. \n\nVous avez surement téléchargé cette application à la demande d\'une entreprise. \n\n\nGlissez vers la gauche pour la suite</string>
+    <string name="tutorial_2_content">Sur l\'écran d\'accueil, vous avez un bouton +. Grâce à ce bouton, vous accédez à la page de recherche sur laquelle vous pouvez chercher l\'entreprise que vous voulez suivre. \n\n\nGlissez vers la gauche pour la suite</string>
+    <string name="tutorial_3_content">Vous pouvez vous connecter en temps qu\'anonyme ou bien utiliser un compte. \n\nL\'avantage de posséder un compte est que vous pouvez gérer votre compte et lire les nouveautés sur plusieurs équipements. Que ce soit sur ordinateur, tablettes ou smartphones. \n\n\nFermez cette fenêtre pour choisir votre type compte.</string>
+    <string name="tutorial_2_title">Suivre une entreprise</string>
+    <string name="tutorial_3_title">Comptes</string>
 </resources>

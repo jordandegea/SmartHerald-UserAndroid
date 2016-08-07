@@ -28,9 +28,11 @@ public class ServicesListActivity extends AppCompatActivity {
 
     private static final int PARSE_LOGIN_REQUEST_CODE = 1;
 
-    private ServicesListAdapter<ParseObject> adapter ;
+    private ListView listView;
+    private ServicesListAdapter<ParseObject> adapter;
     private ServicesListActivity self;
     private LoadContentTask contentLoader ;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -39,6 +41,10 @@ public class ServicesListActivity extends AppCompatActivity {
 
     private boolean fetchUser(){
 
+        if ( ParseUser.getCurrentUser() == null){
+            startAccountIntent();
+            return true;
+        }
         //Log.d("ServicesListActivity", "fetch User");
         final ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
@@ -64,27 +70,9 @@ public class ServicesListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final ParseUser currentUser = ParseUser.getCurrentUser();
+        listView = (ListView) findViewById(R.id.list);
 
-        adapter = new ServicesListAdapter<ParseObject>(self, new ServicesListAdapter.QueryFactory<ParseObject>() {
-            public ParseQuery<ParseObject> create() {
-                ParseQuery query = new ParseQuery("Subscription");
-                query.whereEqualTo("user", currentUser);
-                query.include("service");
-                return query;
-            }
-        });
-        adapter.setAutoload(false);
-
-
-        adapter.setTextKey("name");
-
-        ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(adapter);
-
-        if ( fetchUser() ) {
-            loadContent();
-        }
+        loadContent();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +89,22 @@ public class ServicesListActivity extends AppCompatActivity {
         if ( contentLoader != null){
             contentLoader.cancel(true);
         }
+        final ParseUser currentUser = ParseUser.getCurrentUser();
+
+        adapter = new ServicesListAdapter<ParseObject>(self, new ServicesListAdapter.QueryFactory<ParseObject>() {
+            public ParseQuery<ParseObject> create() {
+                ParseQuery query = new ParseQuery("Subscription");
+                query.whereEqualTo("user", currentUser);
+                query.include("service");
+                return query;
+            }
+        });
+        adapter.setAutoload(false);
+
+
+        adapter.setTextKey("name");
+
+        listView.setAdapter(adapter);
 
         contentLoader = new LoadContentTask();
         contentLoader.execute();
@@ -138,9 +142,8 @@ public class ServicesListActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            ParseUser.logOut();
-            fetchUser();
+        if (id == R.id.serviceToAccount) {
+            startAccountIntent();
             return true;
         }
 
@@ -155,6 +158,13 @@ public class ServicesListActivity extends AppCompatActivity {
         startServiceIntent(object);
     }
 
+    private void startAccountIntent() {
+
+        Intent intent;
+        intent = new Intent(ServicesListActivity.this, AccountActivity.class);
+        startActivityForResult(intent, 3);
+        overridePendingTransition(R.anim.slide_right_in, R.anim.slide_right_out);
+    }
 
     private void startServiceIntent(ParseObject object) {
 

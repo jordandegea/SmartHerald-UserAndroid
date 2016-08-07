@@ -134,7 +134,7 @@ public class MessagesListActivity extends AppCompatActivity {
                     ParseQuery query = new ParseQuery("Message");
                     query.whereEqualTo("service", serviceObject);
                     query.whereEqualTo("sent", true);
-                    query.orderByDescending("createdAt");
+                    query.orderByDescending("updatedAt");
                     return query;
                 }
             });

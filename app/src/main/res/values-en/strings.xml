@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Herald</string>
+    <string name="action_settings">Settings</string>
+    <string name="logout">Log Out</string>
+    <string name="title_activity_message">Messages</string>
+    <string name="title_activity_service_search">Companies</string>
+    <string name="logIn">Log In</string>
+    <string name="createAnonymousAccount">Create Anonymous account</string>
+    <string name="signUp">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="close_tutorial">Close the tutorial</string>
+    <string name="tutorial_1_title">Introduction</string>
+    <string name="tutorial_1_content">Here are some explanations about this application. \n\n\nSmart Herald is an application involving a few companies. \n\nYou have probably downloaded this application at the request of a company. \n\n\nSwipe left to continue</string>
+    <string name="tutorial_2_content">On the Home screen, you have a button \"+\" . With this button, you access the search page you can find the company you want to follow . \n\n\nSwipe left to continue</string>
+    <string name="tutorial_3_content">You can create an account or log in as Anonymous account. \n\n\nThe benefit of the account is that you can manage your account and read the news on multiple devices. Whether on computers, tablets or smartphones. \n\n\nPlease close this window to select your account.</string>
+    <string name="tutorial_2_title">Follow a company</string>
+    <string name="tutorial_3_title">Accounts</string>
+</resources>

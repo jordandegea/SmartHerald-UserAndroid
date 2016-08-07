@@ -13,12 +13,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.parse.GetCallback;
+import com.parse.LogInCallback;
 import com.parse.ParseAnonymousUtils;
+import com.parse.ParseCloud;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.ui.ParseLoginBuilder;
+import com.parse.ui.ParseSignupFragment;
 import com.sinenco.smartherald.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by jordandegea on 06/08/16.
@@ -52,6 +60,32 @@ public class AccountActivity extends AppCompatActivity {
         signUpButton = (Button) findViewById(R.id.signUpButton);
         logOutButton = (Button) findViewById(R.id.logOutButton);
 
+        createAnonymousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createAnonymousAccount();
+            }
+        });
+        logInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startLogIn();
+            }
+        });
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startSignUp();
+            }
+        });
+
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseUser.logOut();
+                populatesFields();
+            }
+        });
         populatesFields();
     }
 
@@ -59,8 +93,8 @@ public class AccountActivity extends AppCompatActivity {
         if(ParseUser.getCurrentUser() == null){
             usernameLabel.setVisibility(View.INVISIBLE);
             usernameField.setVisibility(View.INVISIBLE);
-            emailLabel.setVisibility(View.INVISIBLE);
-            emailField.setVisibility(View.INVISIBLE);
+            emailLabel.setVisibility(View.GONE);
+            emailField.setVisibility(View.GONE);
             logOutButton.setVisibility(View.INVISIBLE);
 
             createAnonymousButton.setVisibility(View.VISIBLE);
@@ -73,7 +107,7 @@ public class AccountActivity extends AppCompatActivity {
             emailField.setVisibility(View.VISIBLE);
             logOutButton.setVisibility(View.VISIBLE);
 
-            createAnonymousButton.setVisibility(View.INVISIBLE);
+            createAnonymousButton.setVisibility(View.GONE);
             logInButton.setVisibility(View.INVISIBLE);
             signUpButton.setVisibility(View.INVISIBLE);
 
@@ -112,12 +146,37 @@ public class AccountActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     private void startTutorialIntent() {
-
         Intent intent;
         intent = new Intent(AccountActivity.this, TutorialActivity.class);
         startActivityForResult(intent, 1);
         overridePendingTransition(R.anim.slide_right_in, R.anim.slide_right_out);
+    }
+
+
+    private static final int PARSE_LOGIN_REQUEST_CODE = 1;
+
+    private void createAnonymousAccount(){
+        ParseAnonymousUtils.logIn(new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+                populatesFields();
+            }
+        });
+    }
+
+    private void startLogIn(){
+        ParseLoginBuilder builder = new ParseLoginBuilder(this);
+        startActivityForResult(builder.build(), PARSE_LOGIN_REQUEST_CODE);
+    }
+
+    private void startSignUp(){
+        ParseLoginBuilder builder = new ParseLoginBuilder(this);
+        startActivityForResult(builder.build(), PARSE_LOGIN_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        this.populatesFields();
     }
 }

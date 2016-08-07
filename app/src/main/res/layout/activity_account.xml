@@ -25,6 +25,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
+        android:layout_marginTop="64dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,26 +35,30 @@
             android:layout_height="wrap_content"
             android:text="@string/username"
             android:id="@+id/usernameLabel"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_margin="8dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/usernameField"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:enabled="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email"
             android:id="@+id/emailLabel"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_margin="8dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/emailField"
-            android:layout_margin="8dp" />
+            android:layout_margin="8dp"
+            android:enabled="false" />
 
         <Button
             android:layout_width="fill_parent"

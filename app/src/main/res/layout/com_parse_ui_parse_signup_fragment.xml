@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/com_parse_ui_vertical_margin"
+    android:paddingLeft="@dimen/com_parse_ui_horizontal_margin"
+    android:paddingRight="@dimen/com_parse_ui_horizontal_margin"
+    android:paddingBottom="@dimen/com_parse_ui_vertical_margin"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/pattern_tutorial_repeat">
+
+
+    <include
+        layout="@layout/com_parse_ui_parse_login_app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.17" />
+
+    <LinearLayout
+        android:id="@+id/parse_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup_username_input"
+            android:layout_margin="8dp"
+            android:hint="@string/username"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/signup_password_input"
+            android:layout_margin="8dp"
+            android:hint="@string/com_parse_ui_password_input_hint"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/signup_confirm_password_input"
+            android:layout_margin="8dp"
+            android:hint="@string/com_parse_ui_password_input_hint"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup_email_input"
+            android:layout_margin="8dp"
+            android:hint="@string/email"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup_name_input"
+            android:layout_margin="8dp"
+            android:hint="@string/com_parse_ui_name_input_hint"
+            android:singleLine="true"
+            android:visibility="gone"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp"
+            android:id="@+id/create_account"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

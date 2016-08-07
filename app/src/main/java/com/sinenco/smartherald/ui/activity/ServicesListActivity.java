@@ -26,7 +26,6 @@ import java.util.Map;
 
 public class ServicesListActivity extends AppCompatActivity {
 
-    private static final int PARSE_LOGIN_REQUEST_CODE = 1;
 
     private ListView listView;
     private ServicesListAdapter<ParseObject> adapter;
@@ -40,24 +39,11 @@ public class ServicesListActivity extends AppCompatActivity {
     }
 
     private boolean fetchUser(){
-
         if ( ParseUser.getCurrentUser() == null){
             startAccountIntent();
             return true;
         }
-        //Log.d("ServicesListActivity", "fetch User");
-        final ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser != null) {
-            try {
-                currentUser.fetch();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            return true;
-        }else {
-            startLogIn();
-            return false;
-        }
+        return false;
     }
 
     @Override
@@ -111,20 +97,10 @@ public class ServicesListActivity extends AppCompatActivity {
     }
 
 
-    private void startLogIn(){
-        ParseLoginBuilder builder = new ParseLoginBuilder(this);
-        startActivityForResult(builder.build(), PARSE_LOGIN_REQUEST_CODE);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if ( requestCode == PARSE_LOGIN_REQUEST_CODE) {
-            fetchUser();
-            loadContent();
-            Map<String, Object> update_params = new HashMap<String, Object>();
-            update_params.put("installationId", ParseInstallation.getCurrentInstallation().getObjectId());
-            ParseCloud.callFunctionInBackground("update_installation", update_params);
-        }
+        loadContent();
     }
 
     @Override

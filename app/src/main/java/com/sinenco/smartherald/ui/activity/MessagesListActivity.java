@@ -44,17 +44,7 @@ public class MessagesListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_messages_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //TODO : Hide for the moment
-        fab.hide();
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO : Afficher tous les messages
-            }
-        });
-*/
+
         new onCreateTask().execute();
 
     }

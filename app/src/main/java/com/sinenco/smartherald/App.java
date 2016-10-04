@@ -7,7 +7,7 @@ import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
-import com.parse.interceptors.ParseLogInterceptor;
+//import com.parse.interceptors.ParseLogInterceptor;
 
 
 import java.util.Date;
@@ -52,7 +52,7 @@ public class App extends Application {
     private void initializeParse(){
         //Parse.enableLocalDatastore(this);
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .addNetworkInterceptor(new ParseLogInterceptor())
+                //.addNetworkInterceptor(new ParseLogInterceptor())
                 .applicationId(PARSE_APPLICATION_ID)
                 .clientKey(PARSE_APPLICATION_ID)
                 .server(PARSE_SERVER_URL)

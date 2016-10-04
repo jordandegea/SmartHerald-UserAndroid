@@ -9,8 +9,8 @@
     <string name="signUp">S\'inscrire</string>
     <string name="username">Nom de compte</string>
     <string name="email">Email</string>
-    <string name="title_activity_tutorial">TutorialActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tutorial" translatable="false">TutorialActivity</string>
+    <string name="section_format" translatable="false">Hello World from section: %1$d</string>
     <string name="close_tutorial">Fermer le tutorial</string>
     <string name="tutorial_1_title">Introduction</string>
     <string name="tutorial_1_content">Voici quelques explications sur le fonctionnement de cette application. \n\n\nSmart Herald est une application regroupant quelques entreprises. \n\nVous avez surement téléchargé cette application à la demande d\'une entreprise. \n\n\nGlissez vers la gauche pour la suite</string>

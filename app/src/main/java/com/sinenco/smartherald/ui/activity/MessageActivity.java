@@ -48,7 +48,15 @@ public class MessageActivity extends AppCompatActivity {
                 if (e == null) {
                     messageObject = object ;
                     //webview.getSettings().setJavaScriptEnabled(true);
-                    webView.loadData(object.getString("content"), "text/html", "UTF-8");
+                    String content = object.getString("content");
+
+                    content = content.replace("{$js_jquery}", "http://code.jquery.com/jquery-3.1.1.min.js");
+                    content = content.replace("{$bootswatch_cerulean}", "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css");
+                    content = content.replace("{$js_jquery3.1.1}", "http://code.jquery.com/jquery-3.1.1.min.js");
+                    content = content.replace("{$bootstrap}", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+                    content = content.replace("{$js_bootstrap}", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js");
+
+                    webView.loadData(content, "text/html", "UTF-8");
                 } else {
                     self.finish();
                 }

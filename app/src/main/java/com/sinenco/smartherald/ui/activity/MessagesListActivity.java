@@ -123,7 +123,7 @@ public class MessagesListActivity extends AppCompatActivity {
                     // Here we can configure a ParseQuery to our heart's desire.
                     ParseQuery query = new ParseQuery("Message");
                     query.whereEqualTo("service", serviceObject);
-                    query.whereEqualTo("sent", true);
+                    //query.whereEqualTo("sent", true);
                     query.orderByDescending("updatedAt");
                     return query;
                 }
